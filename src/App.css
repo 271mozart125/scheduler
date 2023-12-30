@@ -1,0 +1,279 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui;
+    
+}
+
+/* HEADER */
+
+.header-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    width: auto;
+}
+
+.title {
+    width: 25%;
+    margin: 0 20px 0 50px;
+    
+}
+
+.todos {
+    margin-top: 10px
+}
+
+
+
+/* EMPLOYEE INPUTS */
+
+.add-employee-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 5px;
+    flex-wrap: wrap;
+    margin-right: 25px;
+
+}
+
+.button{
+    height: 38px;
+     width: 75px;
+    border-radius: 5px; 
+    border: 1px solid transparent ;
+     margin-bottom: none
+}
+
+/* APP */
+
+.app-container{
+    height: auto;
+    width: auto;
+    
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url(https://www.whitepoint.com/content/uploads/2020/11/spa-treatments-4-1920x898.jpg);
+
+
+}
+
+.inputs {
+    height: 38px;
+    width: 250px;
+    border-radius: 5px; 
+    border: 1px solid #d3d3d3 ;
+     margin-bottom: none
+}
+
+.schedule-list-container {
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+select {
+    background-color: rgba(255, 255, 255, .65);
+}
+
+
+
+
+
+
+/* MODAL */
+
+aside {
+    position: absolute;
+    left: 8%;
+    top: 10%;
+    box-shadow: 20px 20px 300px rgb(1, 54, 1);
+    height: 85%;
+    width: 85%;
+    background-color: rgba(167, 162, 165, 0.90);
+}
+
+
+.exit-modal {
+    position: relative;
+    left: 98%;
+    top: 0;
+}
+
+.modal-form {
+    align-self: stretch;
+    margin-left: 50px
+}
+
+
+.modal-lists {
+    font-size: 16px;
+    overflow-y: scroll;
+    height: 500px;
+    list-style: none;
+    
+    
+    
+}
+
+.modal-lists::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-li {
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center;
+    justify-content: right;
+
+}
+
+
+
+.schedule-map {
+    display: flex;
+    align-items: center;
+    
+
+
+}
+
+.schedule-map .inputs {
+    margin: 5px;
+    width: 200px
+}
+
+.shift-location-button {
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+span {
+    text-align: left;
+    margin-right: 15px
+}
+
+.terramar-container {
+    margin-left: 50px;
+    margin-right: 50px
+}
+
+.divino-container {
+    margin-left: 50px;
+    margin-right: 50px
+}
+ 
+
+
+
+
+/* CALENDAR */
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+      
+}
+
+.calendar h4 {
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.calendar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    flex-wrap: wrap;
+    width: auto;
+    align-items: center;
+    margin: 25px;
+
+}
+
+.days .modal-lists {
+    height: 200px;
+    margin-top: 0;
+    margin-left: 35px
+}
+
+.days{
+    
+    height: 250px;
+    width: 200px;
+    background-color: rgba(234, 171, 212, 0.70);
+    border-radius: 10px;
+    margin: 4px;
+    
+    
+}
+
+
+
+
+
+
+
+/* EMPLOYEE LISTS */
+
+
+.emp-names{
+    background: rgba(231, 223, 223, 0.5);
+}
+
+.emp-title {
+    text-align: center;
+}
+
+.employee-component {
+    margin-right: 20px;
+}
+
+.side-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 10px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
