@@ -1,11 +1,15 @@
-import { useSelector } from "react-redux"
+import { useSelector} from "react-redux"
+
+
+
 
 
 
 const Calendar = () => {
+    
     const allEmployees = useSelector((store:any) => store.employee.employees)
-    const terramarAmLunes = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "AM" && emp.request.indexOf("LunesAM") < 0 && emp.request.indexOf("Lunes") < 0 )
-    const terramarPmLunes = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "PM" && emp.request.indexOf("LunesPM") < 0 && emp.request.indexOf("Lunes") < 0)
+    const terramarAmLunes = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "AM" && emp.request.indexOf("LunesAM") < 0 && emp.request.indexOf("Lunes") < 0 ).concat(allEmployees.filter((emp:any) => emp.request.indexOf("LunesPM") >= 0))
+    const terramarPmLunes = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "PM" && emp.request.indexOf("LunesPM") < 0 && emp.request.indexOf("Lunes") < 0).concat(allEmployees.filter((emp:any) => emp.request.indexOf("LunesAM") >= 0))
     const terramarAmMartes = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "AM" && emp.request.indexOf("MartesAM") < 0 && emp.request.indexOf("Martes") < 0)
     const terramarPmMartes = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "PM" && emp.request.indexOf("MartesPM") < 0 && emp.request.indexOf("Martes") < 0)
     const terramarAmMiercoles = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "AM" && emp.request.indexOf("MiercolesAM") < 0 && emp.request.indexOf("Miercoles") < 0)
@@ -18,6 +22,7 @@ const Calendar = () => {
     const terramarPmSabado = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "PM" && emp.request.indexOf("SabadoPM") < 0 && emp.request.indexOf("Sabado") < 0)
     const terramarAmDomingo = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "AM" && emp.request.indexOf("DomingoAM") < 0 && emp.request.indexOf("Domingo") < 0)
     const terramarPmDomingo = allEmployees.filter((emp: any) => emp.location == "Terramar" && emp.shift == "PM" && emp.request.indexOf("DomingoAM") < 0 && emp.request.indexOf("Domingo") < 0)
+    
     // Divinoo //
 
     const divinoAmLunes = allEmployees.filter((emp: any) => emp.location == "Divino" && emp.shift == "AM" && emp.request.indexOf("LunesAM") < 0 && emp.request.indexOf("Lunes") < 0)
@@ -35,6 +40,14 @@ const Calendar = () => {
     const divinoAmDomingo = allEmployees.filter((emp: any) => emp.location == "Divino" && emp.shift == "AM" && emp.request.indexOf("DomingoAM") < 0 && emp.request.indexOf("Domingo") < 0)
     const divinoPmDomingo = allEmployees.filter((emp: any) => emp.location == "Divino" && emp.shift == "PM" && emp.request.indexOf("DomingoAM") < 0 && emp.request.indexOf("Domingo") < 0)
     
+    
+    
+
+    
+
+
+
+
     return (
         <div className="calendar-wrapper">
             <div className="calendar">
@@ -227,5 +240,8 @@ const Calendar = () => {
         
     )
 }
+
+
+
 
 export default Calendar

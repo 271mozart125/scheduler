@@ -6,6 +6,7 @@ import { useState } from "react"
 
 
 const EditModal = () => {
+    
     const dispatch = useDispatch()
     const allEmployees = useSelector((store:any) => store.employee.employees)
     const selectedEmp = useSelector((store:any) => store.employee.selectedEmployee)
@@ -16,7 +17,10 @@ const EditModal = () => {
     const [id, setId] = useState(selectedEmp.id)
     const [requestDay, setRequestDay] = useState("")
     const [request, setRequest] = useState("")
-    console.log(id)
+
+
+    
+
     
 
     
@@ -86,7 +90,7 @@ const EditModal = () => {
                             }
                             <p>**PM**</p>
                             {
-                                pmShiftBamboo.map((emp:any) => <li className="modal-li" key={emp.id}><span>{emp.name}</span><button className="shift-location-button" value={emp.id} onClick={shiftSwitch}>Turno</button><button className="shift-location-button" onClick={locationSwitch} value={emp.id}>Ubi</button><button onClick={selectEmp} className="shift-location-button" value={emp.id}>Selectar</button></li>)
+                                pmShiftBamboo.map((emp:any) => <li className="modal-li" key={emp.id}><span>{emp.name}</span><button className="shift-location-button" value={emp.id} onClick={shiftSwitch}>Turno</button><button className="shift-location-button" onClick={locationSwitch} value={emp.id}>Ubi</button><button onClick={selectEmp} className="shift-location-button" value={emp.id}>Selecionar</button></li>)
                             }
                         </ul>
                     </div>
@@ -95,11 +99,11 @@ const EditModal = () => {
                         <ul className="modal-lists">
                             <p style = {{textAlign: "center"}}>**AM**</p>
                             {
-                                amShiftDivino.map((emp:any) => <li className="modal-li" key={emp.id}><span>{emp.name}</span><button className="shift-location-button" value={emp.id} onClick={shiftSwitch}>Turno</button><button className="shift-location-button" onClick={locationSwitch} value={emp.id}>Ubi</button><button onClick={selectEmp} className="shift-location-button" value={emp.id}>Selectar</button></li>)
+                                amShiftDivino.map((emp:any) => <li className="modal-li" key={emp.id}><span>{emp.name}</span><button className="shift-location-button" value={emp.id} onClick={shiftSwitch}>Turno</button><button className="shift-location-button" onClick={locationSwitch} value={emp.id}>Ubi</button><button onClick={selectEmp} className="shift-location-button" value={emp.id}>Selecionar</button></li>)
                             }
                             <p>**PM**</p>
                             {
-                                pmShiftDivino.map((emp:any) => <li className="modal-li" key={emp.id}><span>{emp.name}</span><button className="shift-location-button" value={emp.id} onClick={shiftSwitch}>Turno</button><button className="shift-location-button" onClick={locationSwitch} value={emp.id}>Ubi</button><button onClick={selectEmp} className="shift-location-button" value={emp.id}>Selectar</button></li>)
+                                pmShiftDivino.map((emp:any) => <li className="modal-li" key={emp.id}><span>{emp.name}</span><button className="shift-location-button" value={emp.id} onClick={shiftSwitch}>Turno</button><button className="shift-location-button" onClick={locationSwitch} value={emp.id}>Ubi</button><button onClick={selectEmp} className="shift-location-button" value={emp.id}>Selecionar</button></li>)
                             }
                         </ul>
                     </div>
@@ -109,6 +113,7 @@ const EditModal = () => {
                             <div className="edit-employee">
                                 <p>Nombre: {selectedEmp.name}</p>
                                 <p>Titulo: {selectedEmp.title}</p>
+                                <p> Pedicion: <span>{selectedEmp.request.join(", ")}</span></p>
                                 <select className="inputs">
                                     <option value ="">Titulo</option>
                                     <option>Estilista</option>
@@ -145,5 +150,7 @@ const EditModal = () => {
         </aside>
     )
 }
+
+
 
 export default EditModal
